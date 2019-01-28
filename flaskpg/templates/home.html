@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for pg in pgs %}
+
+        <article class="media content-section">
+
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('pg', pg_id=pg.id) }}">{{ pg.pg_name }}</a>
+              <small class="text-muted">Location: {{ pg.location_info }}</small>
+              <small class="text-muted">{{ pg.date_posted.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <h2>Description: {{ pg.body }}</h2>
+            <h2>Price: {{ pg.price }}</h2>
+            <h2>Owner: {{ pg.owner.username }}</h2>
+            <!-- {% if current_user.user_role == "Customer" %}
+              <a href="{{ url_for('book_pg', pg_id=pg.id) }}">Book PG</a>
+            {% endif %} -->
+          </div>
+        </article>
+        {{ pgsdict }}
+    {% endfor %}
+{% endblock content %}

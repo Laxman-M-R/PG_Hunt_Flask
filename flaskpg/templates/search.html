@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Search results</h1>
+
+{% for search in response.hits.hits %}	
+	
+		
+			
+
+
+			 <article class="media content-section">
+
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('pg', pg_id=search._source.id) }}">{{ search._source.pg_name }}</a>
+              <small class="text-muted">{{ search._source.location_info }}</small>
+              
+            <h2>{{ search._source.price }}</h2>
+            
+            
+          </div>
+        </div>
+     
+
+		
+	
+
+{% endfor %}
+{% endblock %}

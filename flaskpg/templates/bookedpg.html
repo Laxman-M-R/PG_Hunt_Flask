@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div>           
+    {% for item in bookedpgs %}  
+           <p> {{ item.__dict__ }} </p>      
+    {% endfor %}             
+  </div>
+{% endblock content %}

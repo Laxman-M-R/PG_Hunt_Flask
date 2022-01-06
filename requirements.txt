@@ -2,7 +2,7 @@ alembic==1.0.6
 amqp==2.4.0
 bcrypt==3.1.6
 billiard==3.5.0.5
-celery==4.2.1
+celery==5.2.2
 cffi==1.11.5
 Click==7.0
 elasticsearch==6.3.1
